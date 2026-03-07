@@ -94,7 +94,7 @@ async fn commit(State(s): State<Arc<AppState>>, Json(req): Json<CommitRequest>) 
 async fn merge(State(s): State<Arc<AppState>>, Json(req): Json<MergeRequest>) -> Json<MergeResponse> {
     let t = Instant::now();
     let h = fnv1a(format!("{}:{}:{}", req.base, req.ours, req.theirs).as_bytes());
-    let has_conflicts = h % 5 == 0;
+    let has_conflicts = h.is_multiple_of(5);
     let conflicts = if has_conflicts {
         vec![MergeConflict { path: format!("/root/node_{}", h % 10), ours: "value_a".into(), theirs: "value_b".into() }]
     } else {

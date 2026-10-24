@@ -106,4 +106,6 @@ curl -X POST http://localhost:8081/api/v1/vcs/merge \
 
 ## License
 
-AGPL-3.0-or-later — see [LICENSE](LICENSE) for details.
+`LicenseRef-Proprietary`. The text is [LICENSE-Proprietary](LICENSE-Proprietary).
+
+Enquiries: https://extoria.co.jp/
